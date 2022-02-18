@@ -11,7 +11,7 @@ package business;
  */
 public class User {
 
-    private String username, password, fname, mname, lname, location, state, role;
+    private String username, password, fname, mname, lname, location, state, role, passattempt;
     
     // default constructor
     public User(){
@@ -23,10 +23,11 @@ public class User {
         this.location = "";
         this.state = "";
         this.role = "";
+        this.passattempt = "";
     }
     
         //normal constructor.  All fields should be validated BEFORE calling this method.  Add functionality for limiting scope / permissions???
-    public User(String username, String password, String fname, String mname, String lname, String location, String state, String role){
+    public User(String username, String password, String fname, String mname, String lname, String location, String state, String role, String passattempt){
         this.username = username;
         this.password = password;
         this.fname = fname;
@@ -35,6 +36,14 @@ public class User {
         this.location = location;
         this.state = state;
         this.role = role;
+        this.passattempt = passattempt;
+    }
+    
+    public boolean isAuthenticated(){
+        if (this.password == this.passattempt){
+            return true;
+        }
+        return false;
     }
     
     public String getUsername() {
@@ -99,5 +108,13 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getPassattempt() {
+        return passattempt;
+    }
+
+    public void setPassattempt(String passattempt) {
+        this.passattempt = passattempt;
     }
 }
