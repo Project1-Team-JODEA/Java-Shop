@@ -45,6 +45,10 @@ public class addRecordServlet extends HttpServlet {
         Boolean updatePatient = false;
         Boolean updateVaccine = false;
         Boolean updateUser = false;
+        
+        // below are "methods" that can be used to update specific tables in the database.  If used as a servlet,
+        // pass update booleans via the session object
+        
         try{        
             Connection conn = DriverManager.getConnection(dbURL, dbUSER, dbPWD);
             if(updatePatient == true){
