@@ -135,9 +135,9 @@ public class addRecordServlet extends HttpServlet {
                 ps.setString(7, u.getRole());
                 int rc = ps.executeUpdate();
                 if (rc == 0){
-                    msg += "Vaccine not updated. <br>";
+                    msg += "User not updated. <br>";
                 } else if (rc == 1){
-                    msg += "Vaccine updated. <br>";
+                    msg += "User updated. <br>";
                 } else {
                     msg += "Warning: multiple records updated. <br>";
                 }
