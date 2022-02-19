@@ -52,7 +52,7 @@ public class loginServlet extends HttpServlet {
             username = "";
             String passattempt = "";
             // load and register JDBC driver for mySql
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
             Connection conn = DriverManager.getConnection(dbURL, dbUSER, dbPWD);
             Statement s = conn.createStatement();
             sql = "SELECT * FROM usertbl WHERE username = '" + username + "'";
