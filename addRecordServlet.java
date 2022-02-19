@@ -49,7 +49,8 @@ public class addRecordServlet extends HttpServlet {
         // below are "methods" that can be used to update specific tables in the database.  If used as a servlet,
         // pass update booleans via the session object
         
-        try{        
+        try{
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
             Connection conn = DriverManager.getConnection(dbURL, dbUSER, dbPWD);
             if(updatePatient == true){
                 // needs: get patient info from form
